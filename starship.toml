@@ -1,5 +1,12 @@
 # Don't print a new line at the start of the prompt
-add_newline = true
+# add_newline = true
+add_newline = false
+
+format = "$username$os$directory$all"
+# format = "$username$os$directory$git_branch$git_status$git_commit$git_metrics$docker_context"
+
+# [line_break]
+# disabled = true
 
 # Replaces the default "❯" symbol in the prompt with "➜"
 [character]                             # The name of the module we are configuring is "character"
@@ -14,11 +21,26 @@ disabled = true
 style_user = "bold green"
 show_always = true
 
+[os]
+disabled = false
+# symbol = " "
+# format = "on [ ]($style)"
+# style = "bold blue"
+
+[os.symbols]
+# Arch = "🐧 "
+Arch = "  "
+# Windows = " "
+
 [hostname]
 ssh_only = false
+disabled = true 
 format =  "[$hostname](bold red) "
-disabled = false
 
 [nodejs]
-symbol = "🍕 "
+symbol = "⛏️ "
+# symbol = "🧩 "
+# symbol = "🍕 "
 
+[solidity]
+symbol = "💎 "
