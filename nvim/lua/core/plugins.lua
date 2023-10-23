@@ -1,0 +1,65 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
+ {"folke/which-key.nvim"},
+ {
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+},
+{"nvim-treesitter/nvim-treesitter"},
+{"neovim/nvim-lspconfig"},
+{
+  "ribru17/bamboo.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require('bamboo').setup {
+      transparent = true,
+    }
+    require('bamboo').load()
+  end,
+},
+{"hrsh7th/cmp-nvim-lsp"},
+{"hrsh7th/cmp-buffer"},
+{"hrsh7th/cmp-path"},
+{"hrsh7th/cmp-cmdline"},
+{"hrsh7th/nvim-cmp"},
+{
+  "williamboman/mason.nvim"
+},
+  {
+    "nvim-telescope/telescope.nvim", tag = '0.1.4',
+-- or                              , branch = '0.1.x',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  { "dense-analysis/ale" },
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
+  { 'windwp/nvim-ts-autotag' },
+{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+{
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      'linrongbin16/lsp-progress.nvim',
+    },
+  },
+})
