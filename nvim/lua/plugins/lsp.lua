@@ -1,6 +1,36 @@
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
+lspconfig.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug", "typescriptreact", "vue" },
+    init_options = {
+      html = {
+        options = {
+          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+          ["bem.enabled"] = true,
+        },
+      },
+    }
+})
+lspconfig.solidity_ls_nomicfoundation.setup {
+  capabilities = capabilities,
+  cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+  filetypes = { "solidity" },
+  root_dir = lspconfig.util.root_pattern(".prettierrc"),
+  single_file_support = true,
+}
+lspconfig.html.setup {
+  capabilities = capabilities,
+}
+lspconfig.cssls.setup {
+  capabilities = capabilities
+}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
