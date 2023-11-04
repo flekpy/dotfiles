@@ -31,5 +31,8 @@ keymap('n', '<leader>x', '<cmd> BufferLinePickClose<CR>', opts)
 keymap('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', opts)
 keymap('n', '<C-w>', '<cmd> NvimTreeCollapseKeepBuffers <CR>', opts)
 
+-- Terminal
+keymap('n', '<A-i>', ':ToggleTerm direction=float<CR>', opts)
+
 -- Insert mode
 keymap("i", "jk", "<ESC>", opts)

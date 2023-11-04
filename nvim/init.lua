@@ -6,6 +6,7 @@ require('core.config')
 -- Plugins
 require('plugins.treesitter')
 require('plugins.bufferline')
+require('plugins.toggleterm')
 require('plugins.telescope')
 require('plugins.nvimtree')
 require('plugins.comment')

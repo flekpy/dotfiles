@@ -68,5 +68,6 @@ require("lazy").setup({
     dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring'
     }
-  }
+  },
+{'akinsho/toggleterm.nvim', version = "*", config = true}
 })
