@@ -23,17 +23,18 @@ require("lazy").setup({
 },
 {"nvim-treesitter/nvim-treesitter"},
 {"neovim/nvim-lspconfig"},
-{
-  "ribru17/bamboo.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require('bamboo').setup {
-      transparent = true,
-    }
-    require('bamboo').load()
-  end,
-},
+-- {
+--   "ribru17/bamboo.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require('bamboo').setup {
+--       transparent = true,
+--     }
+--     require('bamboo').load()
+--   end,
+-- },
+{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
 {"hrsh7th/cmp-nvim-lsp"},
 {"hrsh7th/cmp-buffer"},
 {"hrsh7th/cmp-path"},
