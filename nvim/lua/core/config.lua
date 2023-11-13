@@ -7,9 +7,9 @@ vim.opt.scrolloff = 10
 vim.opt.swapfile = false
 vim.opt.expandtab = true
 vim.opt.updatetime = 100
-vim.opt.ignorecase = true 
-vim.opt.signcolumn = 'no'
-vim.opt.encoding = 'utf-8'
+vim.opt.ignorecase = true
+vim.opt.signcolumn = "no"
+vim.opt.encoding = "utf-8"
 vim.opt.virtualedit = "block"
 vim.opt.termguicolors = true
 vim.g.loaded_netrwPlugin = 1
@@ -21,4 +21,3 @@ vim.opt.clipboard = "unnamedplus"
 -- vim.api.nvim_set_hl(0, "EndOfBuffer", {ctermfg=NONE, ctermbg=NONE})
 -- vim.api.nvim_set_hl(0, "NormalFloat", {ctermfg=NONE, ctermbg=NONE, guibg=NONE})
 -- vim.api.nvim_set_hl(0, "NvimTreeNormal", {ctermfg=NONE, ctermbg=NONE, guibg=NONE})
-
