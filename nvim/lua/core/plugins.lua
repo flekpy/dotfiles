@@ -47,9 +47,12 @@ require("lazy").setup({
 	},
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.4",
+		tag = "0.1.5",
 		-- or                              , branch = '0.1.x',
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		},
 	},
 	{ "dense-analysis/ale" },
 	{
@@ -74,4 +77,16 @@ require("lazy").setup({
 		"stevearc/conform.nvim",
 		opts = {},
 	},
+	{
+		"mfussenegger/nvim-lint",
+		{
+			"iamcco/markdown-preview.nvim",
+			cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+			ft = { "markdown" },
+			build = function()
+				vim.fn["mkdp#util#install"]()
+			end,
+		},
+	},
+	{ "mhartington/formatter.nvim" },
 })
