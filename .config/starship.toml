@@ -1,0 +1,48 @@
+format = """$username\
+$os\
+$directory\
+$time\
+$all"""
+
+[battery]
+full_symbol = "• "
+charging_symbol = "⇡ "
+discharging_symbol = "⇣ "
+unknown_symbol = "❓ "
+empty_symbol = "❗ "
+
+[username]
+style_user = "bold green"
+show_always = true
+
+[os]
+disabled = false
+
+[os.symbols]
+# Arch = "🐧 "
+Arch = "  "
+# Windows = " "
+
+[package]
+disabled = true
+
+[erlang]
+symbol = "ⓔ "
+
+[nodejs]
+symbol = "[⬢](bold green) "
+
+[pulumi]
+symbol = "🧊 "
+
+[typst]
+symbol = "t "
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bold yellow"
+# style = "bg:color_bg1"
+# format = '[[⌛$time](fg:color_fg0 bg:color_bg1)]($style)'
+format = '[[⌛$time ](fg:#808080 bg:none)]($style)'
+# format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
