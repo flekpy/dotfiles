@@ -7,7 +7,7 @@ local keymap = vim.api.nvim_set_keymap
 -- clear highlights
 keymap("n", "<Esc>", ":noh <CR>", opts)
 
--- Save file
+-- Save file Ctrl + s
 keymap("n", "<C-s>", ":w <CR>", opts)
 
 -- Navigation
@@ -25,16 +25,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
-
--- BufferLine
-keymap("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", opts)
-keymap("n", "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", opts)
-keymap("n", "<leader>x", "<cmd> BufferLinePickClose<CR>", opts)
-
--- NvimTree
-keymap("n", "<C-n>", "<cmd> NvimTreeToggle <CR>", opts)
--- keymap("n", "<leader-e>", "<cmd> NvimTreeFindFile <CR>", opts)
-keymap("n", "<C-w>", "<cmd> NvimTreeCollapseKeepBuffers <CR>", opts)
 
 -- Terminal
 keymap("n", "<A-i>", ":ToggleTerm direction=float<CR>", opts)
